@@ -1,6 +1,6 @@
 # Project Vision
 
-> Version: 2.0
+> Version: 1.0
 > Last Updated: 21-07-2026
 
 ---
