@@ -5,51 +5,51 @@
 
 ---
 
-# Purpose
+# Назначение
 
-**Forge** (working title) is a cross-engine production platform designed to automate repetitive tasks during game development.
+**Forge** (рабочее название) — это кроссплатформенная производственная платформа, предназначенная для автоматизации рутинных процессов разработки игр.
 
-The project is focused on artists, technical artists, narrative designers, level designers, sound designers, and programmers who work with large amounts of game content.
+Проект ориентирован на художников, технических художников, сценаристов, левел-дизайнеров, звукорежиссеров и программистов, работающих с большим объемом игрового контента.
 
-Instead of providing gameplay systems or runtime frameworks, Forge focuses entirely on **content production**, helping teams build, validate, organize, and maintain game assets more efficiently.
+Forge не является игровым фреймворком и не предоставляет готовые игровые механики. Основная задача платформы — автоматизация производственного процесса (Production Pipeline), ускорение создания контента и снижение количества ошибок при разработке.
 
-The long-term vision is to create a unified ecosystem that can support multiple game engines through dedicated integrations while sharing a common production core.
-
----
-
-# Vision
-
-Game development contains thousands of repetitive tasks that waste valuable production time:
-
-- configuring imported assets;
-- creating characters;
-- validating content;
-- renaming files;
-- organizing folders;
-- checking references;
-- maintaining project standards.
-
-Forge aims to automate these tasks so developers can spend more time creating games instead of managing assets.
+Долгосрочная цель проекта — создать единую экосистему инструментов, способную работать с несколькими игровыми движками через специализированные интеграции, сохраняя при этом единое ядро.
 
 ---
 
-# Core Philosophy
+# Видение проекта
 
-Forge is built around several principles.
+Разработка игр состоит из тысяч повторяющихся действий, которые ежедневно отнимают время команды.
 
-## Engine-Agnostic Core
+Например:
 
-The majority of the platform should not depend on any specific game engine.
+- настройка импортируемых ассетов;
+- создание персонажей;
+- проверка проекта на ошибки;
+- переименование файлов;
+- организация структуры проекта;
+- поиск битых ссылок;
+- поддержание единых стандартов.
 
-Business logic, validation systems, production workflows, dialogue processing, search algorithms, and asset management should all be implemented inside a shared Core.
-
-Game engines communicate with the Core through dedicated adapters.
+Forge стремится автоматизировать эти процессы, позволяя разработчикам тратить время на создание игр, а не на выполнение однотипной технической работы.
 
 ---
 
-## Adapter Architecture
+# Основные принципы
 
-Instead of developing different products for Unity, Unreal Engine, or future engines, Forge will use an adapter-based architecture.
+## Независимое от движка ядро
+
+Большая часть платформы не должна зависеть от конкретного игрового движка.
+
+Валидация проекта, обработка ассетов, работа с диалогами, поиск, пакетные операции и бизнес-логика реализуются внутри общего Core.
+
+Игровые движки взаимодействуют с этим ядром через специальные адаптеры.
+
+---
+
+## Архитектура адаптеров
+
+Вместо создания отдельных продуктов для Unity, Unreal Engine и других движков, Forge использует архитектуру адаптеров.
 
 ```
 Forge
@@ -75,33 +75,33 @@ Forge
 └── Unreal Adapter
 ```
 
-Each adapter is responsible only for communicating with the engine's API.
+Каждый адаптер отвечает исключительно за взаимодействие с API соответствующего движка.
 
-This approach minimizes duplicated code and allows new engines to be supported without rewriting the platform.
+Такой подход минимизирует дублирование кода и позволяет добавлять поддержку новых движков без переписывания основной платформы.
 
 ---
 
-## Modular Design
+## Модульность
 
-Every major feature is implemented as an independent module.
+Каждый крупный инструмент реализуется как независимый модуль.
 
-Modules can evolve independently while sharing common infrastructure.
+Все модули используют общую инфраструктуру, но могут развиваться независимо друг от друга.
 
-This keeps the platform scalable as new functionality is added over time.
+Это позволяет постепенно расширять возможности платформы без изменения существующей архитектуры.
 
 ---
 
 ## Production First
 
-Forge is not intended to replace Unity or Unreal Editor.
+Forge не заменяет редакторы Unity или Unreal Engine.
 
-Instead, it extends them with professional production tools that simplify everyday workflows.
+Платформа дополняет их профессиональными инструментами, автоматизирующими производственные процессы команды.
 
 ---
 
-# Product Structure
+# Структура продукта
 
-The complete Forge ecosystem is planned to include the following modules:
+Полная экосистема Forge в перспективе будет состоять из следующих модулей:
 
 ```
 Forge
@@ -121,178 +121,179 @@ Forge
 └── Audio Toolkit
 ```
 
-Each module targets a specific production workflow and can be developed independently.
+Каждый модуль отвечает за отдельную производственную задачу и может развиваться независимо.
 
 ---
 
-# Target Audience
+# Целевая аудитория
 
-Forge is designed for:
+Forge предназначен для:
 
-- Indie developers
-- Small game studios
-- AA teams
-- Technical Artists
-- Artists
-- Narrative Designers
-- Level Designers
-- Audio Designers
-- Unity Developers
-- Unreal Engine Developers
-
----
-
-# Development Strategy
-
-Forge will be developed incrementally.
-
-Each development stage delivers a complete and usable product instead of waiting for the entire ecosystem to be finished.
-
-This allows developers to adopt Forge early while the platform continues to grow.
+- Indie-разработчиков;
+- небольших игровых студий;
+- AA-команд;
+- Technical Artist;
+- художников;
+- Narrative Designer;
+- Level Designer;
+- Sound Designer;
+- Unity Developer;
+- Unreal Engine Developer.
 
 ---
 
-# Stage 1 — Foundation
+# Стратегия разработки
 
-The first public release focuses on solving the most common production bottlenecks.
+Forge будет развиваться поэтапно.
 
-Included modules:
+Каждый этап представляет собой полностью законченный и пригодный для использования продукт.
 
-- Asset Import Pipeline
-- Validation Suite
-- Batch Toolkit
-- Character Builder
-- Dialogue Toolkit
-
-These tools provide immediate value for almost every Unity project while establishing the architecture for future expansion.
-
-The first release will target **Unity** exclusively.
-
-Although the internal architecture is designed to be engine-independent, Unreal Engine support will be introduced in a later stage.
+Такой подход позволяет начать использовать платформу уже после первого релиза, постепенно получая новые возможности вместе с последующими обновлениями.
 
 ---
 
-# Future Roadmap
+# Этап 1 — Основа платформы
 
-## Stage 2 — Content Creation
+Первый релиз сосредоточен на решении наиболее распространенных задач, возникающих при производстве игрового контента.
 
-Expand production workflows.
+В состав первого релиза войдут:
 
-Modules:
+- Asset Import Pipeline;
+- Validation Suite;
+- Batch Toolkit;
+- Character Builder;
+- Dialogue Toolkit.
 
-- Prefab Builder
-- Animation Toolkit
-- Search Toolkit
+Эти инструменты покрывают большинство ежедневных задач практически любого Unity-проекта и одновременно формируют архитектурную основу для дальнейшего развития платформы.
 
----
+Первый релиз будет поддерживать **только Unity**.
 
-## Stage 3 — Environment Production
-
-Improve level creation.
-
-Modules:
-
-- Tilemap Toolkit
-- Environment Toolkit
+При этом архитектура с самого начала проектируется таким образом, чтобы в дальнейшем без серьезных изменений добавить поддержку Unreal Engine и других игровых движков.
 
 ---
 
-## Stage 4 — Production Analytics
+# Дальнейшая дорожная карта
 
-Introduce project analysis tools.
+## Этап 2 — Создание контента
 
-Modules:
+Расширение инструментов производства.
 
-- Production Dashboard
-- Build statistics
-- Memory reports
-- Asset analytics
-- Project health monitoring
+Планируемые модули:
 
----
-
-## Stage 5 — Audio Production
-
-Provide tools for audio pipelines.
-
-Modules:
-
-- Audio Toolkit
-- Import automation
-- Duplicate detection
-- Audio validation
-- Preview system
+- Prefab Builder;
+- Animation Toolkit;
+- Search Toolkit.
 
 ---
 
-## Stage 6 — Team Collaboration
+## Этап 3 — Создание окружения
 
-Support larger development teams.
+Инструменты для ускорения работы левел-дизайнеров и художников окружения.
 
-Potential features:
+Планируемые модули:
 
-- Git integration
-- Pre-commit validation
-- CI/CD reports
-- Shared project rules
-- Team production pipelines
+- Tilemap Toolkit;
+- Environment Toolkit.
 
 ---
 
-## Stage 7 — Unreal Engine Support
+## Этап 4 — Аналитика производства
 
-Introduce the second official engine adapter.
+Добавление инструментов анализа проекта.
 
-Goals:
+Планируемые возможности:
 
-- Unreal Asset Import Pipeline
-- Unreal Validation Suite
-- Unreal Batch Toolkit
-- Unreal Character Builder
-- Shared Core between Unity and Unreal Engine
-
-At this point, Forge becomes a true multi-engine production platform.
-
----
-
-## Stage 8 — AI Assisted Production
-
-Leverage AI to automate production workflows.
-
-Potential features:
-
-- automatic asset categorization;
-- intelligent project validation;
-- smart search;
-- automatic metadata generation;
-- dialogue consistency analysis;
-- production recommendations;
-- workflow optimization.
+- Production Dashboard;
+- статистика проекта;
+- анализ памяти;
+- анализ размеров сборки;
+- аналитика ассетов;
+- мониторинг состояния проекта.
 
 ---
 
-# Long-Term Vision
+## Этап 5 — Работа со звуком
 
-Forge is intended to become a complete production platform rather than a simple Unity editor extension.
+Инструменты автоматизации аудиопроизводства.
 
-Possible future directions include:
+Планируется:
 
-- support for additional game engines;
-- standalone desktop application;
-- cloud synchronization;
-- production asset database;
-- plugin marketplace;
-- public SDK for third-party extensions;
-- CI/CD integrations;
-- localization pipeline support;
-- Addressables support;
-- Plastic SCM and Git integration;
-- AI-powered production assistants.
+- Audio Toolkit;
+- автоматический импорт;
+- поиск дубликатов;
+- проверка ссылок;
+- предпросмотр аудио.
 
 ---
 
-# Final Goal
+## Этап 6 — Командная разработка
 
-The ultimate goal of Forge is to become a central production platform that helps game development teams create content faster, maintain higher quality, and reduce repetitive manual work regardless of the game engine they use.
+Поддержка крупных команд.
 
-Unity will serve as the initial platform, while the architecture is designed from the beginning to support future expansion into Unreal Engine and additional technologies.
+Возможные возможности:
+
+- интеграция с Git;
+- проверка проекта перед Commit;
+- отчеты для CI/CD;
+- единые правила проекта;
+- производственные пайплайны команды.
+
+---
+
+## Этап 7 — Поддержка Unreal Engine
+
+Добавление второго официального адаптера.
+
+Основные цели:
+
+- Unreal Asset Import Pipeline;
+- Unreal Validation Suite;
+- Unreal Batch Toolkit;
+- Unreal Character Builder;
+- использование общего Core между Unity и Unreal Engine.
+
+После этого Forge станет полноценной мультидвижковой производственной платформой.
+
+---
+
+## Этап 8 — AI Assisted Production
+
+Использование искусственного интеллекта для автоматизации производственных процессов.
+
+Возможные функции:
+
+- автоматическая категоризация ассетов;
+- интеллектуальная проверка проекта;
+- умный поиск;
+- автоматическая генерация метаданных;
+- анализ целостности диалогов;
+- рекомендации по исправлению ошибок;
+- оптимизация производственного процесса.
+
+---
+
+# Долгосрочные перспективы
+
+В перспективе Forge должен стать полноценной производственной платформой, а не просто набором Editor Tools.
+
+Возможные направления развития:
+
+- поддержка дополнительных игровых движков;
+- отдельное настольное приложение;
+- облачная синхронизация проектов;
+- централизованная база ассетов;
+- Marketplace с дополнительными модулями;
+- публичный SDK для сторонних разработчиков;
+- интеграция с CI/CD;
+- поддержка Localization Pipeline;
+- поддержка Addressables;
+- интеграция с Plastic SCM и Git;
+- AI-помощники для автоматизации производства.
+
+---
+
+# Конечная цель
+
+Главная цель Forge — стать центральной производственной платформой, которая помогает игровым студиям создавать контент быстрее, поддерживать высокое качество проекта и избавляться от рутинной ручной работы независимо от используемого игрового движка.
+
+Unity станет первой поддерживаемой платформой, однако архитектура проекта изначально проектируется таким образом, чтобы в будущем Forge мог работать с Unreal Engine и другими игровыми движками без необходимости переписывать основную систему.
